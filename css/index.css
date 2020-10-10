@@ -1,0 +1,205 @@
+/*Fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+
+	font-size: 16px;
+}
+
+*{
+
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+  
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container{
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #181818;
+}
+
+.container .slider{
+  
+  width: 100%;
+  height: 100%;
+}
+
+.container .slider .slide{
+  
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+}
+
+.container .slider .slide::after{
+  
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .35);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container .slider .slide img{
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  object-position: center;
+  -o-object-position: center;
+  position: relative;
+}
+
+.container .slider .slide .text{
+  
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  z-index: 1;
+  user-select: none;
+}
+
+.container .slider .slide .text h2{
+
+  padding-bottom: 1rem;
+  font-size: clamp(2rem, 5vmin, 4.5rem);
+  opacity: 0;
+}
+
+.container .slider .slide .text p{
+
+  font-size: clamp(1rem, 5vmin, 1.5rem);
+  opacity: 0;
+  animation-delay: .5s;
+  -o-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+}
+
+.animation{
+
+  animation-name: fade-in;
+  -o-animation-name: fade-in;
+  -moz-animation-name: fade-in;
+  -webkit-animation-name: fade-in;
+  animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-in{
+
+  0%{
+
+    transform: translateY(50px);
+  }
+
+  100%{
+
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prev,
+.next {
+  
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  width: auto;
+  padding: 1.2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: 0.6s ease;
+  transform: translateY(-50%);
+  border-radius: 0 8px 8px 0;
+  z-index: 2;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.next {
+
+  right: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+.prev:hover,
+.next:hover {
+
+  background-color: rgba(0,0,0,0.9);
+}
+
+.dots{
+
+  position: absolute;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  bottom: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.dot {
+
+  cursor: pointer;
+  height: 5px;
+  width: 10px;
+  margin: 0 10px;
+  background-color: #fff;
+  transition: 0.5s;
+  border-radius: 50px;
+}
+
+.dot.activate,
+.dot:hover {
+
+  width: 30px;
+  background-color: #B11313;
+}
+
+.contenedorGeneral .slider .active{
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
